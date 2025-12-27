@@ -26,6 +26,13 @@ unsafe = true
     iconHeight = 36
     text = ""
 
+  [params.assets]
+    favicon = "/favicon.svg"
+    safari_pinned_tab = "/favicon.svg"
+    apple_touch_icon = "/images/Logo_BW.png"
+    favicon32x32 = "/images/Logo_BW.png"
+    favicon16x16 = "/images/Logo_BW.png"
+
 [menu]
   [[menu.main]]
     name = "Home"
