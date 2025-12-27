@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://www.captaincourageous.co.uk/'
 languageCode = 'en-gb'
 title = 'Captain Courageous'
 theme = 'papermod'
