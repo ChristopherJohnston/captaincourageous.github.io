@@ -11,6 +11,16 @@
             <i class="fa-solid fa-link"></i>
         </a>
         {{- end }}
+        {{- with .instagram }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="margin: 0 10px; font-size: 1.5em;">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        {{- end }}
+        {{- with .facebook }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="margin: 0 10px; font-size: 1.5em;">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        {{- end }}
         {{- with .tiktok }}
         <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="margin: 0 10px; font-size: 1.5em;">
             <i class="fa-brands fa-tiktok"></i>

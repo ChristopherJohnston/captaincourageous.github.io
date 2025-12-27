@@ -29,6 +29,8 @@ draft: false
 <div style="border: 1px solid #ededed; border-radius: 10px; padding: 16px; margin: 0 0 24px 0; text-align: center;">
 	<p style="margin: 0 0 10px 0; font-weight: 700;">Stay connected</p>
 	<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+		<a href="https://www.instagram.com/captaincourageousband" style="background: #111; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="fa-brands fa-instagram"></i> Instagram</a>
+		<a href="https://www.facebook.com/profile.php?id=61585847815298" style="background: #111; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="fa-brands fa-facebook"></i> Facebook</a>
 		<a href="https://www.tiktok.com/@captain.courageous" style="background: #111; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="fa-brands fa-tiktok"></i> TikTok</a>
 		<a href="https://x.com/CourageousMusic" style="background: #111; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="fa-brands fa-x-twitter"></i> X</a>
 		<a href="https://www.youtube.com/@CaptainCourageousMusic" style="background: #111; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="fa-brands fa-youtube"></i> YouTube</a>

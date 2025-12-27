@@ -17,6 +17,8 @@ unsafe = true
   [params.social]
     email = "band@captaincourageous.co.uk"
     linktree = "https://linktr.ee/captaincourageous"
+    instagram = "https://www.instagram.com/captaincourageousband"
+    facebook = "https://www.facebook.com/profile.php?id=61585847815298"
     tiktok = "https://www.tiktok.com/@captain.courageous"
     twitter = "https://x.com/CourageousMusic"
     youtube = "https://www.youtube.com/@CaptainCourageousMusic"
