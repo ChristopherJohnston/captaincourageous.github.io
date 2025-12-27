@@ -3,7 +3,7 @@ title: "Contact Us"
 draft: false
 ---
 
-<img src="/images/logo_bw.svg" alt="Contact Captain Courageous" style="max-width: 400px; display: block; margin: 0 auto 30px;">
+<img src="/images/logo_bw.png" alt="Contact Captain Courageous" style="max-width: 400px; display: block; margin: 0 auto 30px;">
 
 ## Get In Touch
 
