@@ -1,0 +1,48 @@
+baseURL = '/'
+languageCode = 'en-gb'
+title = 'Captain Courageous'
+theme = 'papermod'
+defaultContentLanguage = 'en'
+outputs = { home = ["HTML", "RSS", "JSON"] }
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+  description = "UK guitar-driven band crafting upbeat anthemic tunes with irresistibly catchy hooks"
+  keywords = ["Captain Courageous", "band", "music", "rock", "UK"]
+  images = ["/images/CaptainCourageous_Profile_2660x1140.jpg"]
+
+  [params.social]
+    email = "band@captaincourageous.co.uk"
+    linktree = "https://linktr.ee/captaincourageous"
+    tiktok = "https://www.tiktok.com/@captain.courageous"
+    twitter = "https://x.com/CourageousMusic"
+    youtube = "https://www.youtube.com/@CaptainCourageousMusic"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Music"
+    url = "music/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Contact"
+    url = "contact/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Merch"
+    url = "https://captain-courageous.square.site"
+    weight = 5

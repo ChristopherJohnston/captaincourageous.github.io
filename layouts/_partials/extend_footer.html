@@ -1,0 +1,31 @@
+{{- /* Footer custom content area start */ -}}
+<div class="social-icons" style="text-align: center; margin: 0 0 20px 0;">
+    {{- with site.Params.social }}
+        {{- with .email }}
+        <a href="mailto:{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Email" style="margin: 0 10px; font-size: 1.5em;">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        {{- end }}
+        {{- with .linktree }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Linktree" style="margin: 0 10px; font-size: 1.5em;">
+            <i class="fa-solid fa-link"></i>
+        </a>
+        {{- end }}
+        {{- with .tiktok }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="margin: 0 10px; font-size: 1.5em;">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        {{- end }}
+        {{- with .twitter }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style="margin: 0 10px; font-size: 1.5em;">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        {{- end }}
+        {{- with .youtube }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="margin: 0 10px; font-size: 1.5em;">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        {{- end }}
+    {{- end }}
+</div>
+{{- /* Footer custom content area end */ -}}
