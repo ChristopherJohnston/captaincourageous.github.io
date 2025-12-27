@@ -3,7 +3,10 @@ title: "Contact Us"
 draft: false
 ---
 
-<img src="/images/logo_bw.png" alt="Contact Captain Courageous" style="max-width: 400px; display: block; margin: 0 auto 30px;">
+<style>
+	:root[data-theme="dark"] img.contact-logo { filter: invert(1); }
+</style>
+<img src="/images/Logo_BW.png" alt="Contact Captain Courageous" class="contact-logo" style="max-width: 400px; display: block; margin: 0 auto 30px;">
 
 ## Get In Touch
 
