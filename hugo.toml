@@ -21,6 +21,11 @@ unsafe = true
     twitter = "https://x.com/CourageousMusic"
     youtube = "https://www.youtube.com/@CaptainCourageousMusic"
 
+  [params.label]
+    icon = "/images/Logo_BW.png"
+    iconHeight = 36
+    text = ""
+
 [menu]
   [[menu.main]]
     name = "Home"
