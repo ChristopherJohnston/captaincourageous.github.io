@@ -10,7 +10,7 @@ draft: false
 
 <div style="border: 1px solid #e0e7f5; border-radius: 12px; padding: 24px; margin: 0 0 28px 0; text-align: center;">
 	<h1 style="margin: 0 0 12px 0; font-size: 2rem; line-height: 1.2; color: inherit;">Hooky, feel-good indie rock</h1>
-	<p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: inherit;">UK band blending bright guitars, big sing-alongs, and road-trip energy — built for turning up and singing loud.</p>
+	<p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: inherit;">UK band blending bright guitars, big sing-alongs, and feel good energy — built for turning up and singing loud.</p>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 24px; border: 1px solid #ededed; border-radius: 10px; padding: 18px;">
