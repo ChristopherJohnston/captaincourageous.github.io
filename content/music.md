@@ -12,7 +12,7 @@ Find out more about our music and links to streaming platforms.
 
 Burning Fire is a nostalgic anthem that encapsulates the road-tripping adventures through Australia that marked the beginning of Captain Courageous.
 
-The song was born from a serendipitous moment when a friend strummed a guitar and sang the word 'Refraction' during a conversation - sparking the creative connection that would shape our music.
+The song was born from a serendipitous moment when a friend strummed a guitar and sang the word 'Refraction' during a conversation, sparking the creative connection that would shape our music.
 
 Inspired by sun-soaked landscapes, endless highways, and the bittersweet beauty of fleeting moments, Burning Fire blends driving guitar riffs and uplifting melodies to evoke the thrill of open roads, while its lyrics paint vivid snapshots of carefree days and deep connections.
 
@@ -37,11 +37,11 @@ Inspired by sun-soaked landscapes, endless highways, and the bittersweet beauty 
 
 Astronomic was written during the stillness of the 2020 lockdown, inspired by a friend's casual comment about stargazing.
 
-The song captures a sense of wonder, introspection, and longing — a moment of looking to the skies when the world felt so small yet so vast. It quickly became a favorite in Lewis' virtual open mic nights on Facebook, resonating with listeners during a time when connection felt more important than ever.
+The song captures a sense of wonder, introspection, and longing - a moment of looking to the skies when the world felt so small yet so vast. It quickly became a favorite in Lewis' virtual open mic nights on Facebook, resonating with listeners during a time when connection felt more important than ever.
 
 The original recording was crafted remotely over several sessions in 2020, blending our ideas and energies from afar.
 
-After sitting on ice while life pulled us in different directions, Astronomic has finally found its place, polished and ready to shine — just like the stars that inspired it.
+After sitting on ice while life pulled us in different directions, Astronomic has finally found its place, polished and ready to shine - just like the stars that inspired it.
 
 <div style="clear: both;"></div>
 
