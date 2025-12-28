@@ -10,14 +10,14 @@
 	<p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: inherit;">{{ site.Data.homepage.hero.description }}</p>
 </div>
 
-{{- $latest := index (sort site.Data.discography.albums "releaseDate" "desc") 0 -}}
+{{- $latest := index (sort site.Data.discography.releases "releaseDate" "desc") 0 -}}
 <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 24px; border: 1px solid #ededed; border-radius: 10px; padding: 18px;">
-	<img src="{{ $latest.image }}" alt="{{ $latest.imageAlt }}" style="width: 180px; max-width: 40%; min-width: 160px; border-radius: 8px; box-shadow: 0 8px 18px rgba(0,0,0,0.08);">
+	<img src="{{ $latest.releaseOf.image }}" alt="{{ $latest.releaseOf.imageAlt }}" style="width: 180px; max-width: 40%; min-width: 160px; border-radius: 8px; box-shadow: 0 8px 18px rgba(0,0,0,0.08);">
 	<div style="flex: 1 1 240px; min-width: 240px;">
-		<p style="margin: 0 0 6px 0; font-weight: 700;">Latest release · {{ $latest.title }}</p>
-		<p style="margin: 0 0 12px 0;">{{ $latest.shortDescription }}</p>
+		<p style="margin: 0 0 6px 0; font-weight: 700;">Latest release · {{ $latest.releaseOf.title }}</p>
+		<p style="margin: 0 0 12px 0;">{{ $latest.releaseOf.shortDescription }}</p>
 		<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-			{{- range $latest.streaming }}
+			{{- range $latest.releaseOf.streaming }}
 			<a href="{{ .url }}" style="background: #1db954; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="{{ .icon }}"></i> {{ .platform }}</a>
 			{{- end }}
 		</div>

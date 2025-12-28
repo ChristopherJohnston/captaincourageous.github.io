@@ -10,8 +10,8 @@
   <div class="post-content">
     <p>{{ .Summary }}</p>
 
-    {{- range $index, $album := site.Data.discography.albums }}
-      {{ partial "discography-item.html" (dict "album" $album "index" $index) }}
+    {{- range $index, $release := site.Data.discography.releases }}
+      {{ partial "discography-item.html" (dict "release" $release "index" $index) }}
     {{- end }}
 
     <h2 id="watch-us-live">Watch Us Live</h2>
