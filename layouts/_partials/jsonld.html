@@ -1,0 +1,38 @@
+{{- /* MusicGroup entity (inline JSON to avoid quoted output) */ -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": {{ site.Title }},
+  "url": {{ site.BaseURL }},
+  "image": {{ site.Params.label.icon | absURL }},
+  "description": {{ site.Params.description | plainify | safeHTML }},
+  "sameAs": [
+    {{- range $i, $e := site.Params.social -}}
+      {{- if $i }}, {{ end -}}
+      {{- trim $e.url " " | safeURL -}}
+    {{- end -}}
+  ]
+}
+</script>
+
+{{- /* Releases: Singles as MusicRecording, Albums/EPs as MusicAlbum */ -}}
+{{- if gt (len site.Data.discography.albums) 0 -}}
+<script type="application/ld+json">
+[
+  {{- range $index, $album := site.Data.discography.albums -}}
+    {{- $schemaType := cond (eq (lower $album.type) "single") "MusicRecording" "MusicAlbum" -}}
+    {{- if $index }}, {{ end -}}
+    {
+      "@context": "https://schema.org",
+      "@type": "{{ $schemaType }}",
+      "name": {{ $album.title }},
+      "image": {{ $album.image | absURL }},
+      "datePublished": {{ $album.releaseDate }},
+      "byArtist": { "@type": "MusicGroup", "name": {{ site.Title }}, "url": {{ site.BaseURL }} },
+      "url": {{ "music/" | absURL }}
+    }
+  {{- end -}}
+]
+</script>
+{{- end -}}

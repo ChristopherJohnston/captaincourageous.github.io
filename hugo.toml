@@ -5,6 +5,7 @@ theme = 'papermod'
 defaultContentLanguage = 'en'
 outputs = { home = ["HTML", "RSS", "JSON"] }
 ignoreLogs = ['warning-goldmark-raw-html']
+enableRobotsTXT = true
 
 [markup.goldmark.renderer]
 unsafe = true
