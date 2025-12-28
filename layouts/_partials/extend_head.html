@@ -3,5 +3,16 @@
 	:root[data-theme="dark"] .header .logo img[aria-label="logo"] { filter: invert(1); }
 </style>
 
+{{- /* Google Analytics */ -}}
+{{- if .Site.Params.googleAnalyticsID }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalyticsID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.Params.googleAnalyticsID }}');
+</script>
+{{- end }}
+
 {{- /* Inject schema.org JSON-LD */ -}}
 {{ partial "jsonld.html" . }}
