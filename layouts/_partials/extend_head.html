@@ -2,3 +2,6 @@
 <style>
 	:root[data-theme="dark"] .header .logo img[aria-label="logo"] { filter: invert(1); }
 </style>
+
+{{- /* Inject schema.org JSON-LD */ -}}
+{{ partial "jsonld.html" . }}
