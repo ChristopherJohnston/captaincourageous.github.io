@@ -13,15 +13,45 @@ unsafe = true
   description = "UK guitar-driven band crafting upbeat anthemic tunes with irresistibly catchy hooks"
   keywords = ["Captain Courageous", "band", "music", "rock", "UK"]
   images = ["/images/CaptainCourageous_Profile_2660x1140.jpg"]
+  press_kit = "/Press_Kit_Captain_Courageous.pdf"
+  contact_logo_alt = "Contact Captain Courageous"
+  email = "band@captaincourageous.co.uk"
 
-  [params.social]
-    email = "band@captaincourageous.co.uk"
-    linktree = "https://linktr.ee/captaincourageous"
-    instagram = "https://www.instagram.com/captaincourageousband"
-    facebook = "https://www.facebook.com/profile.php?id=61585847815298"
-    tiktok = "https://www.tiktok.com/@captain.courageous"
-    twitter = "https://x.com/CourageousMusic"
-    youtube = "https://www.youtube.com/@CaptainCourageousMusic"
+  [[params.social]]
+    name = "Instagram"
+    url = "https://www.instagram.com/captaincourageousband"
+    icon = "fa-brands fa-instagram"
+    handle = "@CaptainCourageousBand"
+
+  [[params.social]]
+    name = "Facebook"
+    url = "https://www.facebook.com/profile.php?id=61585847815298"
+    icon = "fa-brands fa-facebook"
+    handle = "CaptainCourageousBand"
+
+  [[params.social]]
+    name = "TikTok"
+    url = "https://www.tiktok.com/@captain.courageous"
+    icon = "fa-brands fa-tiktok"
+    handle = "@Captain.Courageous"
+
+  [[params.social]]
+    name = "X"
+    url = "https://x.com/CourageousMusic"
+    icon = "fa-brands fa-x-twitter"
+    handle = "@CourageousMusic"
+
+  [[params.social]]
+    name = "YouTube"
+    url = "https://www.youtube.com/@CaptainCourageousMusic"
+    icon = "fa-brands fa-youtube"
+    handle = "@CaptainCourageousMusic"
+
+  [[params.social]]
+    name = "Linktree"
+    url = "https://linktr.ee/captaincourageous"
+    icon = "fa-solid fa-link"
+    handle = "Linktree"
 
   [params.label]
     icon = "/images/Logo_BW.png"

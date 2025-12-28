@@ -1,0 +1,16 @@
+hero:
+  image: "/images/CaptainCourageous_Profile_2660x1140.jpg"
+  imageAlt: "Captain Courageous Band"
+  title: "Hooky, feel-good indie rock"
+  description: "UK Guitar-driven band crafting upbeat anthemic tunes with irresistibly catchy hooks, bright guitars and feel-good energy - built for turning up and singing loud."
+
+videos:
+  - title: "Burning Fire - Captain Courageous"
+    url: "https://www.youtube.com/embed/-KbPw7N6IpY"
+    type: "single"
+  - title: "Live at Insurtech Rocks 2024"
+    url: "https://www.youtube.com/embed/videoseries?si=CEOkTtpS6Dg7nJ0j&amp;list=PLsAKl11YdZklF4_mcHI-n71080zBf1vAe"
+    type: "playlist"
+
+news:
+  - message: "**New music coming soon** — follow us on socials to catch the next drop, or [say hi](/contact/) if you want us in your city."

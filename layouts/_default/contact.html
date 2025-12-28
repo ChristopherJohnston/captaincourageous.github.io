@@ -1,0 +1,30 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <div class="post-content">
+    <style>
+      :root[data-theme="dark"] img.contact-logo { filter: invert(1); }
+    </style>
+    <img src="{{ site.Params.label.icon }}" alt="{{ site.Params.contact_logo_alt }}" class="contact-logo" style="max-width: 400px; display: block; margin: 0 auto 30px;">
+
+    <h2>Get In Touch</h2>
+
+    <p>We'd love to hear from you! Whether you're interested in booking us for a gig, collaborating, or just want to say hello, email us at <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+
+    <h2>Press Kit</h2>
+
+    <p>Download our press kit <a href="{{ site.Params.press_kit }}">here</a></p>
+
+    <h2>Connect With Us</h2>
+
+    <p>Find us on social media and stay up to date with our latest news, releases, and live shows:</p>
+
+    <ul>
+    {{- range site.Params.social }}
+    <li><a href="{{ .url }}"><i class="{{ .icon }}"></i></a> <a href="{{ .url }}">{{ .handle }}</a></li>
+    {{- end }}
+    </ul>
+  </div>
+</article>
+
+{{- end }}

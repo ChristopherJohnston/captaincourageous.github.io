@@ -5,9 +5,9 @@
 
 <div class="album-section" id="{{ $album.id }}">
   <h2>{{ $album.title }}</h2>
-  <p><strong>{{ $album.type }} - Released {{ $album.releaseDate }}</strong></p>
+  <p><strong>{{ $album.type }} - Released {{ dateFormat "2 January 2006" $album.releaseDate }}</strong></p>
 
-  <img src="{{ $album.image }}" alt="{{ $album.imageAlt }}" style="max-width: 280px; width: 45%; min-width: 200px; float: {{ $floatDirection }}; {{ $marginStyle }}">
+  <img src="{{ $album.image }}" alt="{{ $album.imageAlt }}" style="max-width: 280px; width: 45%; min-width: 200px; float: {{ $floatDirection }}; {{ $marginStyle | safeCSS }}">
 
   {{ .album.description | markdownify }}
 
