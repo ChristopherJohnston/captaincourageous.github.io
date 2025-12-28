@@ -2,11 +2,70 @@ albums:
   - id: burning-fire
     title: "Burning Fire"
     type: "Single"
+    duration: "3:59"
+    key: "A Major"
     releaseDate: "2024-11-29"
     isrcCode: "GXAXP2400001"
     upc: "0198875805223"
+    composer: "Captain Courageous"
     distributedBy: "Distrokid"
     label: "Through a Prism"
+    lyrics: |
+      Roll in at dawn from drinking and smoking
+      6am that's when we start talking
+      Our burning fire
+      We were dancing on the flames
+      Setting sail for new horizons
+      Eating up the miles in a Nissan Skyline
+      All along the highways
+      And rolling on the waves
+
+      Feel the joy of Refraction
+      This was our kind of action
+      No need for your reaction
+      In this moment let's just be
+      Card games and wine in a box
+      Heading north, joining the dots
+      Happy just getting lost
+      Watching the light bend through the sea
+
+      The rough guide our gospel
+      Some crazy guy at the hostel
+      He took too much up his nostril
+      Rolling sideways he hit the floor
+      Westpac surveys in Manly
+      About how happy you can be
+      Arana Hills isn't fancy
+      Hit my head on the late night bus
+      But no fuss
+
+      Roll in at dawn from drinking and smoking
+      6am that's when we start talking
+      Our burning fire
+      We were dancing on the flames
+      Setting sail for new horizons
+      Eating up the miles in a Nissan Skyline
+      All along the highways
+      And rolling on the waves
+
+      There's no jobs at the Wizard
+      And Thredbo needed a blizzard
+      The mountain roads made us dizzy
+      Singing along to Brandon's Bones
+      Let's get a haircut in Brisbane
+      Meet some girls, surrender our wisdom
+      Bending light through a prism
+      A souvenir to take back home
+      And all alone
+
+      Roll in at dawn from drinking and smoking
+      6am that's when we start talking
+      Our burning fire
+      We were dancing on the flames
+      Setting sail for new horizons
+      Eating up the miles in a Nissan Skyline
+      All along the highways
+      And rolling on the waves
     image: "/images/Artwork_CaptainCourageous_BurningFire.jpeg"
     imageAlt: "Burning Fire Artwork"
     description: |
@@ -40,11 +99,66 @@ albums:
   - id: astronomic
     title: "Astronomic"
     type: "Single"
+    duration: "4:07"
+    key: "F Major"
     releaseDate: "2023-09-29"
     isrcCode: "GXAXP2300001"
     upc: "0198087334436"
+    composer: "Captain Courageous"
     distributedBy: "Distrokid"
     label: "Through a Prism"
+    lyrics: |
+      When the world shuts itself away
+      Our ties begin to separate
+      Looking to the skies and see those lights sinking into your eyes
+      Your beauty has me on the hook
+      I wanna take a closer look
+      Searching through the night, inspired, pinning my hopes on a satellite
+
+      You've got me feeling astronomic
+      My mind is racing like a comet
+      Oh, draw me into your tapestry
+      For dreaming has no boundary
+      You've got me feeling astronomic
+      My head is spinning and I want it
+      Oh, lose myself in your majesty
+      For dreaming has no boundary
+      Woah-oh
+
+      Each night the sky so clear
+      All I want is to be here
+      The rings of Jupiter
+      The red of Mars
+      Venus close enough to sparkle
+      So far away and yet so near
+      How long have you been up here
+      An empty head has space to dream
+      Imagining the possibilities
+
+      You've got me feeling astronomic
+      My mind is racing like a comet
+      Oh, draw me into your tapestry
+      For dreaming has no boundary
+      You've got me feeling astronomic
+      My head is spinning and I want it
+      Oh, lose myself in your majesty
+      For dreaming has no boundary
+
+      Woah-oh
+      Woah-oh-oh
+      Woah-oh-oh
+      Woah-oh-oh
+      Oh
+
+      You've got me feeling astronomic
+      My mind is racing like a comet
+      Oh, Draw me into your tapestry
+      For dreaming has no boundary
+      You've got me feeling astronomic
+      My head is spinning and I want it
+      Oh, lose myself in your majesty
+      For dreaming has no boundary
+      Woah-oh
     image: "/images/Artwork_Captain%20Courageous_Astronomic.jpg"
     imageAlt: "Astronomic Artwork"
     description: |

@@ -22,6 +22,11 @@
 [
   {{- range $index, $album := site.Data.discography.albums -}}
     {{- $schemaType := cond (eq (lower $album.type) "single") "MusicRecording" "MusicAlbum" -}}
+    {{- $durationParts := split ($album.duration | default "") ":" -}}
+    {{- $durationISO := "" -}}
+    {{- if eq (len $durationParts) 2 -}}
+      {{- $durationISO = printf "PT%sM%sS" (index $durationParts 0) (index $durationParts 1) -}}
+    {{- end -}}
     {{- if $index }}, {{ end -}}
     {
       "@context": "https://schema.org",
@@ -30,10 +35,12 @@
       "image": {{ $album.image | absURL }},
       "datePublished": {{ $album.releaseDate }},
       {{- if $album.isrcCode }}"isrcCode": {{ $album.isrcCode }},{{ end }}
+      {{- if $durationISO }}"duration": "{{ $durationISO }}",{{ end }}
       {{- if or $album.composer $album.lyrics }}
       "recordingOf": {
         "@type": "MusicComposition",
         "name": {{ $album.title }},
+        {{- if $album.key }}"musicalKey": {{ $album.key }},{{ end }}
         {{- if $album.composer }}"composer": { "@type": "Organization", "name": {{ $album.composer }} },{{ end }}
         {{- if $album.lyrics }}"lyrics": { "@type": "CreativeWork", "text": {{ $album.lyrics | plainify | jsonify }} }{{ end }}
       },
