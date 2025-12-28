@@ -9,11 +9,11 @@
 
     <h2>Get In Touch</h2>
 
-    <p>We'd love to hear from you! Whether you're interested in booking us for a gig, collaborating, or just want to say hello, email us at <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+    <p>We'd love to hear from you! Whether you're interested in booking us for a gig, collaborating, or just want to say hello, email us at <a href="mailto:{{ site.Params.email }}" onclick="gtag('event', 'click', {'event_category': 'contact', 'event_label': 'email_contact_page'});">{{ site.Params.email }}</a></p>
 
     <h2>Press Kit</h2>
 
-    <p>Download our press kit <a href="{{ site.Params.press_kit }}">here</a></p>
+    <p>Download our press kit <a href="{{ site.Params.press_kit }}" onclick="gtag('event', 'click', {'event_category': 'downloads', 'event_label': 'press_kit'});">here</a></p>
 
     <h2>Connect With Us</h2>
 
@@ -21,7 +21,7 @@
 
     <ul>
     {{- range site.Params.social }}
-    <li><a href="{{ .url }}"><i class="{{ .icon }}"></i></a> <a href="{{ .url }}">{{ .handle }}</a></li>
+    <li><a href="{{ .url }}" onclick="gtag('event', 'click', {'event_category': 'social', 'event_label': '{{ .name | lower }}_contact_page'});"><i class="{{ .icon }}"></i></a> <a href="{{ .url }}" onclick="gtag('event', 'click', {'event_category': 'social', 'event_label': '{{ .name | lower }}_contact_page'});">{{ .handle }}</a></li>
     {{- end }}
     </ul>
   </div>
