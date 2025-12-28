@@ -22,11 +22,12 @@
 [
   {{- range $index, $release := site.Data.discography.releases -}}
     {{- /* Calculate total duration and track count from tracks */ -}}
+    {{- $tracks := $release.releaseOf.tracks -}}
+    {{- $trackCount := len $tracks -}}
     {{- $totalMinutes := 0 -}}
     {{- $totalSeconds := 0 -}}
-    {{- $trackCount := len $release.releaseOf.tracks -}}
-    {{- range $track := $release.releaseOf.tracks -}}
-      {{- $parts := split ($track.duration | default "") ":" -}}
+    {{- range $tracks -}}
+      {{- $parts := split (.duration | default "") ":" -}}
       {{- if eq (len $parts) 2 -}}
         {{- $mins := int (index $parts 0) -}}
         {{- $secs := int (index $parts 1) -}}
@@ -36,7 +37,20 @@
     {{- end -}}
     {{- $totalMinutes = add $totalMinutes (div $totalSeconds 60) -}}
     {{- $totalSeconds = mod $totalSeconds 60 -}}
-    {{- $totalDurationISO := printf "PT%dM%dS" $totalMinutes $totalSeconds -}}
+    {{- $totalDurationISO := printf "PT%dM%02dS" $totalMinutes $totalSeconds -}}
+    {{- /* Map album release type to schema enum-ish string */ -}}
+    {{- $rawReleaseType := lower ($release.releaseOf.type | default "") -}}
+    {{- $albumReleaseType := cond (eq $rawReleaseType "single") "SingleRelease" (cond (eq $rawReleaseType "ep") "EPRelease" (cond (eq $rawReleaseType "album") "AlbumRelease" $release.releaseOf.type)) -}}
+    {{- /* Label defaults from config (use for all releases unless overridden) */ -}}
+    {{- $labelName := $release.recordLabel | default (site.Params.labelOrg.name | default "") -}}
+    {{- $recordLabelUrl := "" -}}
+    {{- with site.Params.labelOrg -}}
+      {{- if .url -}}
+        {{- $recordLabelUrl = .url -}}
+      {{- end -}}
+    {{- end -}}
+    {{- /* creditedTo always defaults to band MusicGroup */ -}}
+    {{- $creditedTo := $release.creditedTo | default site.Title -}}
     
     {{- if $index }}, {{ end -}}
     {
@@ -44,38 +58,43 @@
       "@type": "MusicRelease",
       "name": {{ $release.releaseOf.title }},
       "datePublished": {{ $release.releaseDate }},
+      "numTracks": {{ $trackCount }},
+      {{- if $release.format }}"musicReleaseFormat": {{ $release.format }},{{ end }}
+      {{- if gt $trackCount 0 }}"duration": "{{ $totalDurationISO }}",{{ end }}
       {{- if $release.catalogNumber }}"catalogNumber": {{ $release.catalogNumber }},{{ end }}
-      {{- if $release.recordLabel }}"recordLabel": {{ $release.recordLabel }},{{ end }}
+      {{- if $labelName }}"recordLabel": { "@type": "Organization", "name": {{ $labelName }}{{ if $recordLabelUrl }}, "url": {{ $recordLabelUrl }}{{ end }} },{{ end }}
       {{- if $release.distributedBy }}"distributedBy": { "@type": "Organization", "name": {{ $release.distributedBy }} },{{ end }}
       "releaseOf": {
         "@type": "MusicAlbum",
         "name": {{ $release.releaseOf.title }},
         "image": {{ $release.releaseOf.image | absURL }},
+        {{- if $release.releaseOf.productionType }}"albumProductionType": {{ $release.releaseOf.productionType }},{{ end }}
+        {{- if $albumReleaseType }}"albumReleaseType": {{ $albumReleaseType }},{{ end }}
         "numTracks": {{ $trackCount }},
-        "duration": "{{ $totalDurationISO }}",
         "byArtist": { "@type": "MusicGroup", "name": {{ site.Title }}, "url": {{ site.BaseURL }} },
         "track": [
-          {{- range $tindex, $track := $release.releaseOf.tracks -}}
+          {{- range $tindex, $track := $tracks -}}
             {{- $trackParts := split ($track.duration | default "") ":" -}}
             {{- $trackISO := "" -}}
             {{- if eq (len $trackParts) 2 -}}
-              {{- $trackISO = printf "PT%sM%sS" (index $trackParts 0) (index $trackParts 1) -}}
+              {{- $trackISO = printf "PT%sM%02dS" (index $trackParts 0) (int (index $trackParts 1)) -}}
             {{- end -}}
             {{- if $tindex }}, {{ end -}}
+            {{- $composer := $track.composer | default site.Title -}}
             {
               "@type": "MusicRecording",
               "name": {{ $track.title }},
+              "position": {{ add $tindex 1 }},
+              "byArtist": { "@type": "MusicGroup", "name": {{ site.Title }}, "url": {{ site.BaseURL }} },
               {{- if $track.isrcCode }}"isrcCode": {{ $track.isrcCode }},{{ end }}
               {{- if $trackISO }}"duration": "{{ $trackISO }}",{{ end }}
               "recordingOf": {
                 "@type": "MusicComposition",
                 "name": {{ $track.title }},
                 {{- if $track.key }}"musicKey": {{ $track.key }},{{ end }}
-                {{- if $track.composer }}"composer": { "@type": "Organization", "name": {{ $track.composer }} }{{ end }}
+                "composer": { "@type": "MusicGroup", "name": {{ $composer }}, "url": {{ site.BaseURL }} }{{ if $track.lyrics }},
+                "lyrics": { "@type": "CreativeWork", "text": {{ $track.lyrics | plainify }} }{{ end }}
               }
-              {{- if $track.lyrics }},
-              "lyrics": { "@type": "CreativeWork", "text": {{ $track.lyrics | plainify | jsonify }} }
-              {{- end }}
             }
           {{- end -}}
         ]

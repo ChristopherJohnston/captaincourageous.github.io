@@ -59,6 +59,10 @@ unsafe = true
     iconHeight = 36
     text = ""
 
+  [params.labelOrg]
+    name = "Through a Prism"
+    url = "https://www.throughaprism.co.uk/"
+
   [params.assets]
     favicon = "/favicon.svg"
     safari_pinned_tab = "/favicon.svg"

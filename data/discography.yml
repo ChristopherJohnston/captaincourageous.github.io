@@ -1,9 +1,7 @@
 releases:
   - id: burning-fire-release
     catalogNumber: "0198875805223"
-    creditedTo: "Captain Courageous"
     format: "DigitalFormat"
-    recordLabel: "Through a Prism"
     distributedBy: "Distrokid"
     releaseDate: "2024-11-29"
     releaseOf:
@@ -47,7 +45,6 @@ releases:
           duration: "3:59"
           key: "A Major"
           isrcCode: "GXAXP2400001"
-          composer: "Captain Courageous"
           lyrics: |
             Roll in at dawn from drinking and smoking
             6am that's when we start talking
@@ -106,9 +103,7 @@ releases:
             And rolling on the waves
   - id: astronomic-release
     catalogNumber: "0198087334436"
-    creditedTo: "Captain Courageous"
     format: "DigitalFormat"
-    recordLabel: "Through a Prism"
     distributedBy: "Distrokid"
     releaseDate: "2023-09-29"
     releaseOf:
@@ -154,7 +149,6 @@ releases:
           duration: "4:07"
           key: "F Major"
           isrcCode: "GXAXP2300001"
-          composer: "Captain Courageous"
           lyrics: |
             When the world shuts itself away
             Our ties begin to separate
