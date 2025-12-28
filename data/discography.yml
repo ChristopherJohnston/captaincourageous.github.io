@@ -3,6 +3,10 @@ albums:
     title: "Burning Fire"
     type: "Single"
     releaseDate: "2024-11-29"
+    isrcCode: "GXAXP2400001"
+    upc: "0198875805223"
+    distributedBy: "Distrokid"
+    label: "Through a Prism"
     image: "/images/Artwork_CaptainCourageous_BurningFire.jpeg"
     imageAlt: "Burning Fire Artwork"
     description: |
@@ -37,6 +41,10 @@ albums:
     title: "Astronomic"
     type: "Single"
     releaseDate: "2023-09-29"
+    isrcCode: "GXAXP2300001"
+    upc: "0198087334436"
+    distributedBy: "Distrokid"
+    label: "Through a Prism"
     image: "/images/Artwork_Captain%20Courageous_Astronomic.jpg"
     imageAlt: "Astronomic Artwork"
     description: |

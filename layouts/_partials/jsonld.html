@@ -29,6 +29,7 @@
       "name": {{ $album.title }},
       "image": {{ $album.image | absURL }},
       "datePublished": {{ $album.releaseDate }},
+      {{- if $album.isrcCode }}"isrcCode": {{ $album.isrcCode }},{{ end }}
       "byArtist": { "@type": "MusicGroup", "name": {{ site.Title }}, "url": {{ site.BaseURL }} },
       "url": {{ "music/" | absURL }}
     }
