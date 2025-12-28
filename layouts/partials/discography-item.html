@@ -1,0 +1,33 @@
+{{- $album := .album -}}
+{{- $index := .index -}}
+{{- $floatDirection := cond (eq (mod $index 2) 0) "left" "right" -}}
+{{- $marginStyle := cond (eq $floatDirection "left") "margin: 0 20px 10px 0;" "margin: 0 0 10px 20px;" -}}
+
+<div class="album-section" id="{{ $album.id }}">
+  <h2>{{ $album.title }}</h2>
+  <p><strong>{{ $album.type }} - Released {{ $album.releaseDate }}</strong></p>
+
+  <img src="{{ $album.image }}" alt="{{ $album.imageAlt }}" style="max-width: 280px; width: 45%; min-width: 200px; float: {{ $floatDirection }}; {{ $marginStyle }}">
+
+  {{ .album.description | markdownify }}
+
+  <div style="clear: both;"></div>
+
+  <p><strong>Stream on:</strong></p>
+  <ul>
+    {{- range $album.streaming }}
+    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank">{{ .platform }}</a></li>
+    {{- end }}
+  </ul>
+
+  {{- if $album.downloads }}
+  <p><strong>Download:</strong></p>
+  <ul>
+    {{- range $album.downloads }}
+    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank">{{ .platform }}</a></li>
+    {{- end }}
+  </ul>
+  {{- end }}
+
+  <hr style="margin: 30px 0;">
+</div>
