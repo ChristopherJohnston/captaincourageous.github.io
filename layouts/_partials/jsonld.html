@@ -67,6 +67,7 @@
       "releaseOf": {
         "@type": "MusicAlbum",
         "name": {{ $release.releaseOf.title }},
+        "description": {{ $release.releaseOf.description | plainify }},
         "image": {{ $release.releaseOf.image | absURL }},
         {{- if $release.releaseOf.productionType }}"albumProductionType": {{ $release.releaseOf.productionType }},{{ end }}
         {{- if $albumReleaseType }}"albumReleaseType": {{ $albumReleaseType }},{{ end }}
