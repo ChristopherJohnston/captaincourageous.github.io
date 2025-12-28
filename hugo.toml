@@ -17,6 +17,7 @@ unsafe = true
   press_kit = "/Press_Kit_Captain_Courageous.pdf"
   contact_logo_alt = "Contact Captain Courageous"
   email = "band@captaincourageous.co.uk"
+  googleAnalyticsID = "G-KFXNZGN4R9"
 
   [[params.social]]
     name = "Instagram"
