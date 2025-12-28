@@ -42,10 +42,25 @@
 	{{- end }}
 </div>
 
-{{- range site.Data.homepage.news }}
-<div style="border-left: 4px solid #111; padding: 14px 18px; margin: 0 0 24px 0; border-radius: 6px;">
-	<p style="margin: 0; font-size: 0.95rem;">{{ .message | markdownify }}</p>
+{{- if site.Data.homepage.instagram_posts }}
+<div style="margin: 0 0 30px 0;">
+	<p style="margin: 0 0 12px 0; font-weight: 700;">Latest from Instagram</p>
+	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+		{{- range site.Data.homepage.instagram_posts }}
+		{{- $shortcode := printf "{{< instagram %s >}}" .id }}
+		{{ $shortcode | $.Page.RenderString }}
+		{{- end }}
+	</div>
 </div>
 {{- end }}
+
+<div style="margin: 0 0 30px 0;">
+	<p style="margin: 0 0 12px 0; font-weight: 700;">News</p>
+    {{- range site.Data.homepage.news }}
+    <div style="border-left: 4px solid #111; padding: 14px 18px; margin: 0 0 24px 0; border-radius: 6px;">
+        <p style="margin: 0; font-size: 0.95rem;">{{ .message | markdownify }}</p>
+    </div>
+    {{- end }}
+</div>
 
 {{- end }}

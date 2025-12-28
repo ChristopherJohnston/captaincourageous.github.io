@@ -12,5 +12,9 @@ videos:
     url: "https://www.youtube.com/embed/videoseries?si=CEOkTtpS6Dg7nJ0j&amp;list=PLsAKl11YdZklF4_mcHI-n71080zBf1vAe"
     type: "playlist"
 
+instagram_posts: []
+  # Add Instagram post IDs here to display them on the homepage
+  # Example: - id: "ABC123"
+
 news:
   - message: "**New music coming soon** — follow us on socials to catch the next drop, or [say hi](/contact/) if you want us in your city."
