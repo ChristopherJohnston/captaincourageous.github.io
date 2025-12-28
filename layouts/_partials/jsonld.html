@@ -16,36 +16,70 @@
 }
 </script>
 
-{{- /* Releases: Singles as MusicRecording, Albums/EPs as MusicAlbum */ -}}
-{{- if gt (len site.Data.discography.albums) 0 -}}
+{{- /* MusicRelease with MusicAlbum and tracks */ -}}
+{{- if gt (len site.Data.discography.releases) 0 -}}
 <script type="application/ld+json">
 [
-  {{- range $index, $album := site.Data.discography.albums -}}
-    {{- $schemaType := cond (eq (lower $album.type) "single") "MusicRecording" "MusicAlbum" -}}
-    {{- $durationParts := split ($album.duration | default "") ":" -}}
-    {{- $durationISO := "" -}}
-    {{- if eq (len $durationParts) 2 -}}
-      {{- $durationISO = printf "PT%sM%sS" (index $durationParts 0) (index $durationParts 1) -}}
+  {{- range $index, $release := site.Data.discography.releases -}}
+    {{- /* Calculate total duration and track count from tracks */ -}}
+    {{- $totalMinutes := 0 -}}
+    {{- $totalSeconds := 0 -}}
+    {{- $trackCount := len $release.releaseOf.tracks -}}
+    {{- range $track := $release.releaseOf.tracks -}}
+      {{- $parts := split ($track.duration | default "") ":" -}}
+      {{- if eq (len $parts) 2 -}}
+        {{- $mins := int (index $parts 0) -}}
+        {{- $secs := int (index $parts 1) -}}
+        {{- $totalMinutes = add $totalMinutes $mins -}}
+        {{- $totalSeconds = add $totalSeconds $secs -}}
+      {{- end -}}
     {{- end -}}
+    {{- $totalMinutes = add $totalMinutes (div $totalSeconds 60) -}}
+    {{- $totalSeconds = mod $totalSeconds 60 -}}
+    {{- $totalDurationISO := printf "PT%dM%dS" $totalMinutes $totalSeconds -}}
+    
     {{- if $index }}, {{ end -}}
     {
       "@context": "https://schema.org",
-      "@type": "{{ $schemaType }}",
-      "name": {{ $album.title }},
-      "image": {{ $album.image | absURL }},
-      "datePublished": {{ $album.releaseDate }},
-      {{- if $album.isrcCode }}"isrcCode": {{ $album.isrcCode }},{{ end }}
-      {{- if $durationISO }}"duration": "{{ $durationISO }}",{{ end }}
-      {{- if or $album.composer $album.lyrics }}
-      "recordingOf": {
-        "@type": "MusicComposition",
-        "name": {{ $album.title }},
-        {{- if $album.key }}"musicalKey": {{ $album.key }},{{ end }}
-        {{- if $album.composer }}"composer": { "@type": "Organization", "name": {{ $album.composer }} },{{ end }}
-        {{- if $album.lyrics }}"lyrics": { "@type": "CreativeWork", "text": {{ $album.lyrics | plainify | jsonify }} }{{ end }}
+      "@type": "MusicRelease",
+      "name": {{ $release.releaseOf.title }},
+      "datePublished": {{ $release.releaseDate }},
+      {{- if $release.catalogNumber }}"catalogNumber": {{ $release.catalogNumber }},{{ end }}
+      {{- if $release.recordLabel }}"recordLabel": {{ $release.recordLabel }},{{ end }}
+      {{- if $release.distributedBy }}"distributedBy": { "@type": "Organization", "name": {{ $release.distributedBy }} },{{ end }}
+      "releaseOf": {
+        "@type": "MusicAlbum",
+        "name": {{ $release.releaseOf.title }},
+        "image": {{ $release.releaseOf.image | absURL }},
+        "numTracks": {{ $trackCount }},
+        "duration": "{{ $totalDurationISO }}",
+        "byArtist": { "@type": "MusicGroup", "name": {{ site.Title }}, "url": {{ site.BaseURL }} },
+        "track": [
+          {{- range $tindex, $track := $release.releaseOf.tracks -}}
+            {{- $trackParts := split ($track.duration | default "") ":" -}}
+            {{- $trackISO := "" -}}
+            {{- if eq (len $trackParts) 2 -}}
+              {{- $trackISO = printf "PT%sM%sS" (index $trackParts 0) (index $trackParts 1) -}}
+            {{- end -}}
+            {{- if $tindex }}, {{ end -}}
+            {
+              "@type": "MusicRecording",
+              "name": {{ $track.title }},
+              {{- if $track.isrcCode }}"isrcCode": {{ $track.isrcCode }},{{ end }}
+              {{- if $trackISO }}"duration": "{{ $trackISO }}",{{ end }}
+              "recordingOf": {
+                "@type": "MusicComposition",
+                "name": {{ $track.title }},
+                {{- if $track.key }}"musicKey": {{ $track.key }},{{ end }}
+                {{- if $track.composer }}"composer": { "@type": "Organization", "name": {{ $track.composer }} }{{ end }}
+              }
+              {{- if $track.lyrics }},
+              "lyrics": { "@type": "CreativeWork", "text": {{ $track.lyrics | plainify | jsonify }} }
+              {{- end }}
+            }
+          {{- end -}}
+        ]
       },
-      {{- end }}
-      "byArtist": { "@type": "MusicGroup", "name": {{ site.Title }}, "url": {{ site.BaseURL }} },
       "url": {{ "music/" | absURL }}
     }
   {{- end -}}
