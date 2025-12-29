@@ -16,7 +16,7 @@
   <p><strong>Stream on:</strong></p>
   <ul>
     {{- range $release.releaseOf.streaming }}
-    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" {{ printf "onclick=\"gtag('event', 'streaming_click', {'event_label': '%s_%s'});\"" (.platform | lower) ($release.releaseOf.title | urlize) | safeHTMLAttr }}>{{ .platform }}</a></li>
+    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'streaming_click', {'event_label': '%s_%s'});\"" (.platform | lower) ($release.releaseOf.title | urlize) | safeHTMLAttr }}>{{ .platform }}</a></li>
     {{- end }}
   </ul>
 
@@ -24,7 +24,7 @@
   <p><strong>Download:</strong></p>
   <ul>
     {{- range $release.releaseOf.downloads }}
-    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" {{ printf "onclick=\"gtag('event', 'download_click', {'event_label': '%s_%s'});\"" (.platform | lower) ($release.releaseOf.title | urlize) | safeHTMLAttr }}>{{ .platform }}</a></li>
+    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'download_click', {'event_label': '%s_%s'});\"" (.platform | lower) ($release.releaseOf.title | urlize) | safeHTMLAttr }}>{{ .platform }}</a></li>
     {{- end }}
   </ul>
   {{- end }}
