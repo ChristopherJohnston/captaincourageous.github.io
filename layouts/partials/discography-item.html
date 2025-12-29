@@ -16,7 +16,7 @@
   <p><strong>Stream on:</strong></p>
   <ul>
     {{- range $release.releaseOf.streaming }}
-    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'streaming_click', {'streaming_service': '%s', 'click_location': 'music_page', 'song_name': '%s'});\"" (.platform | lower) ($release.releaseOf.title | replace "'" "\\'") | safeHTMLAttr }}>{{ .platform }}</a></li>
+    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" onclick='gtag("event","streaming_click",{{ dict "streaming_service" (.platform | lower) "click_location" "music_page" "song_name" $release.releaseOf.title | jsonify }})'>{{ .platform }}</a></li>
     {{- end }}
   </ul>
 
@@ -24,7 +24,7 @@
   <p><strong>Download:</strong></p>
   <ul>
     {{- range $release.releaseOf.downloads }}
-    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'download_click', {'download_platform': '%s', 'click_location': 'music_page', 'song_name': '%s'});\"" (.platform | lower) ($release.releaseOf.title | replace "'" "\\'") | safeHTMLAttr }}>{{ .platform }}</a></li>
+    <li><i class="{{ .icon }}"></i> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" onclick='gtag("event","download_click",{{ dict "download_platform" (.platform | lower) "click_location" "music_page" "song_name" $release.releaseOf.title | jsonify }})'>{{ .platform }}</a></li>
     {{- end }}
   </ul>
   {{- end }}

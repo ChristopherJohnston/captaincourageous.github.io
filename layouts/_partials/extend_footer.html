@@ -1,12 +1,12 @@
 {{- /* Footer custom content area start */ -}}
 <div class="social-icons" style="text-align: center; margin: 0 0 20px 0;">
     {{- with site.Params.email }}
-    <a href="mailto:{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Email" style="margin: 0 10px; font-size: 1.5em;" {{ "onclick=\"gtag('event', 'contact_click', {'contact_channel': 'email', 'click_location': 'footer'});\"" | safeHTMLAttr }}>
+    <a href="mailto:{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Email" style="margin: 0 10px; font-size: 1.5em;" onclick='gtag("event","contact_click",{{ dict "contact_channel" "email" "click_location" "footer" | jsonify }})'>
         <i class="fa-solid fa-envelope"></i>
     </a>
     {{- end }}
     {{- range site.Params.social }}
-    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}" style="margin: 0 10px; font-size: 1.5em;" {{ printf "onclick=\"gtag('event', 'social_click', {'social_platform': '%s', 'click_location': 'footer'});\"" (.name | lower) | safeHTMLAttr }}>
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}" style="margin: 0 10px; font-size: 1.5em;" onclick='gtag("event","social_click",{{ dict "social_platform" (.name | lower) "click_location" "footer" | jsonify }})'>
         <i class="{{ .icon }}"></i>
     </a>
     {{- end }}
