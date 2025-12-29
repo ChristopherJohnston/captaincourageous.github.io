@@ -3,14 +3,61 @@
 	:root[data-theme="dark"] .header .logo img[aria-label="logo"] { filter: invert(1); }
 </style>
 
-{{- /* Google Analytics */ -}}
+{{- /* Cookie consent + consent-gated Google Analytics */ -}}
 {{- if .Site.Params.googleAnalyticsID }}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalyticsID }}"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ .Site.Params.googleAnalyticsID }}');
+  (function() {
+    var GA_ID = '{{ .Site.Params.googleAnalyticsID }}';
+    // Consent state
+    var consent = (function() {
+      try { return (localStorage.getItem('cc_cookie_consent') === 'accepted'); } catch(e) { return false; }
+    })();
+
+    // Safe stub: avoid errors before consent
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ if (consent) { dataLayer.push(arguments); } };
+
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      s.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      };
+      document.head.appendChild(s);
+    }
+
+    if (consent) {
+      loadGA();
+    }
+
+    // Expose helper to accept consent from banner
+    window.__acceptCookies = function() {
+      try { localStorage.setItem('cc_cookie_consent', 'accepted'); } catch(e) {}
+      consent = true;
+      loadGA();
+      var b = document.getElementById('cc-cookie-banner');
+      if (b) b.style.display = 'none';
+    };
+    window.__rejectCookies = function() {
+      try { localStorage.setItem('cc_cookie_consent', 'rejected'); } catch(e) {}
+      consent = false;
+      var b = document.getElementById('cc-cookie-banner');
+      if (b) b.style.display = 'none';
+    };
+    window.__openCookieSettings = function() {
+      try {
+        var b = document.getElementById('cc-cookie-banner');
+        if (b) b.style.display = 'block';
+      } catch(e) {}
+    };
+  })();
 </script>
 {{- end }}
 

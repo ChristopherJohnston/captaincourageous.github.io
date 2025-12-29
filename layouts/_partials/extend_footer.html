@@ -11,4 +11,37 @@
     </a>
     {{- end }}
 </div>
+<div style="text-align: center; margin: 6px 0 18px; font-size: .95rem;">
+    <a href="#" onclick="window.__openCookieSettings(); return false;">Cookie settings</a>
+    · <a href="{{ "privacy/" | absURL }}">Privacy Policy</a>
+    · <a href="mailto:{{ site.Params.email }}">Contact</a>
+  
+</div>
 {{- /* Footer custom content area end */ -}}
+
+{{- /* Cookie Banner */ -}}
+<style>
+    #cc-cookie-banner { position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 9999; background: #111; color: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 10px 24px rgba(0,0,0,.18); display: none; }
+    #cc-cookie-banner p { margin: 0 0 10px; font-size: .95rem; }
+    #cc-cookie-banner a { color: #9fd3ff; text-decoration: underline; }
+    #cc-cookie-banner .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    #cc-cookie-banner .btn { border: 0; border-radius: 6px; padding: 8px 14px; font-weight: 700; cursor: pointer; }
+    #cc-cookie-banner .btn-accept { background: #1db954; color: #fff; }
+    #cc-cookie-banner .btn-reject { background: #444; color: #fff; }
+</style>
+<div id="cc-cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <p>We use cookies for analytics to understand how people use our site. You can accept or reject analytics cookies. See our <a href="{{ "privacy/" | absURL }}">Privacy Policy</a> for details.</p>
+    <div class="actions">
+        <button class="btn btn-accept" onclick="window.__acceptCookies()">Accept</button>
+        <button class="btn btn-reject" onclick="window.__rejectCookies()">Reject</button>
+    </div>
+</div>
+<script>
+    (function(){
+        try {
+            var state = localStorage.getItem('cc_cookie_consent');
+            var banner = document.getElementById('cc-cookie-banner');
+            if (!state && banner) { banner.style.display = 'block'; }
+        } catch(e) {}
+    })();
+</script>
