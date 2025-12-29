@@ -1,12 +1,12 @@
 {{- /* Footer custom content area start */ -}}
 <div class="social-icons" style="text-align: center; margin: 0 0 20px 0;">
     {{- with site.Params.email }}
-    <a href="mailto:{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Email" style="margin: 0 10px; font-size: 1.5em;" {{ "onclick=\"gtag('event', 'click', {'event_category': 'contact', 'event_label': 'email_footer'});\"" | safeHTMLAttr }}>
+    <a href="mailto:{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Email" style="margin: 0 10px; font-size: 1.5em;" {{ "onclick=\"gtag('event', 'contact_click', {'event_label': 'email_footer'});\"" | safeHTMLAttr }}>
         <i class="fa-solid fa-envelope"></i>
     </a>
     {{- end }}
     {{- range site.Params.social }}
-    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}" style="margin: 0 10px; font-size: 1.5em;" {{ printf "onclick=\"gtag('event', 'click', {'event_category': 'social', 'event_label': '%s_footer'});\"" (.name | lower) | safeHTMLAttr }}>
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}" style="margin: 0 10px; font-size: 1.5em;" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s_footer'});\"" (.name | lower) | safeHTMLAttr }}>
         <i class="{{ .icon }}"></i>
     </a>
     {{- end }}
