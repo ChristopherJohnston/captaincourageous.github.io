@@ -18,7 +18,7 @@
 		<p style="margin: 0 0 12px 0;">{{ $latest.releaseOf.shortDescription }}</p>
 		<div style="display: flex; flex-wrap: wrap; gap: 10px;">
 			{{- range $latest.releaseOf.streaming }}
-			<a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'streaming_click', {'event_label': '%s_%s'});\"" (.platform | lower) ($latest.releaseOf.title | urlize) | safeHTMLAttr }} style="background: #1db954; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="{{ .icon }}"></i> {{ .platform }}</a>
+			<a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'streaming_click', {'streaming_service': '%s', 'click_location': 'homepage_latest'});\"" (.platform | lower) | safeHTMLAttr }} style="background: #1db954; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="{{ .icon }}"></i> {{ .platform }}</a>
 			{{- end }}
 		</div>
 	</div>
@@ -28,7 +28,7 @@
 	<p style="margin: 0 0 10px 0; font-weight: 700;">Stay connected</p>
 	<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
 		{{- range site.Params.social }}
-		<a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s'});\"" (.name | lower) | safeHTMLAttr }} style="background: #111; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="{{ .icon }}"></i> {{ .name }}</a>
+		<a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'social_platform': '%s', 'click_location': 'homepage_social'});\"" (.name | lower) | safeHTMLAttr }} style="background: #111; color: #fff; padding: 9px 14px; border-radius: 6px; text-decoration: none; font-weight: 700;"><i class="{{ .icon }}"></i> {{ .name }}</a>
 		{{- end }}
 	</div>
 </div>

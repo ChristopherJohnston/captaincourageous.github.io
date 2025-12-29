@@ -9,11 +9,11 @@
 
     <h2>Get In Touch</h2>
 
-    <p>We'd love to hear from you! Whether you're interested in booking us for a gig, collaborating, or just want to say hello, email us at <a href="mailto:{{ site.Params.email }}" {{ "onclick=\"gtag('event', 'contact_click', {'event_label': 'email_contact_page'});\"" | safeHTMLAttr }}>{{ site.Params.email }}</a></p>
+    <p>We'd love to hear from you! Whether you're interested in booking us for a gig, collaborating, or just want to say hello, email us at <a href="mailto:{{ site.Params.email }}" {{ "onclick=\"gtag('event', 'contact_click', {'contact_channel': 'email', 'click_location': 'contact_page'});\"" | safeHTMLAttr }}>{{ site.Params.email }}</a></p>
 
     <h2>Press Kit</h2>
 
-    <p>Download our press kit <a href="{{ site.Params.press_kit }}" target="_blank" rel="noopener noreferrer" {{ "onclick=\"gtag('event', 'download_click', {'event_label': 'press_kit'});\"" | safeHTMLAttr }}>here</a></p>
+    <p>Download our press kit <a href="{{ site.Params.press_kit }}" target="_blank" rel="noopener noreferrer" {{ "onclick=\"gtag('event', 'download_click', {'download_platform': 'press_kit', 'click_location': 'contact_page'});\"" | safeHTMLAttr }}>here</a></p>
 
     <h2>Connect With Us</h2>
 
@@ -21,7 +21,7 @@
 
     <ul>
     {{- range site.Params.social }}
-    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s_contact_page'});\"" (.name | lower) | safeHTMLAttr }}><i class="{{ .icon }}"></i></a> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s_contact_page'});\"" (.name | lower) | safeHTMLAttr }}>{{ .handle }}</a></li>
+    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'social_platform': '%s', 'click_location': 'contact_page'});\"" (.name | lower) | safeHTMLAttr }}><i class="{{ .icon }}"></i></a> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'social_platform': '%s', 'click_location': 'contact_page'});\"" (.name | lower) | safeHTMLAttr }}>{{ .handle }}</a></li>
     {{- end }}
     </ul>
   </div>
