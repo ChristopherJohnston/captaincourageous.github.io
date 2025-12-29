@@ -13,7 +13,7 @@
 
     <h2>Press Kit</h2>
 
-    <p>Download our press kit <a href="{{ site.Params.press_kit }}" {{ "onclick=\"gtag('event', 'download_click', {'event_label': 'press_kit'});\"" | safeHTMLAttr }}>here</a></p>
+    <p>Download our press kit <a href="{{ site.Params.press_kit }}" target="_blank" rel="noopener noreferrer" {{ "onclick=\"gtag('event', 'download_click', {'event_label': 'press_kit'});\"" | safeHTMLAttr }}>here</a></p>
 
     <h2>Connect With Us</h2>
 
@@ -21,7 +21,7 @@
 
     <ul>
     {{- range site.Params.social }}
-    <li><a href="{{ .url }}" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s_contact_page'});\"" (.name | lower) | safeHTMLAttr }}><i class="{{ .icon }}"></i></a> <a href="{{ .url }}" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s_contact_page'});\"" (.name | lower) | safeHTMLAttr }}>{{ .handle }}</a></li>
+    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s_contact_page'});\"" (.name | lower) | safeHTMLAttr }}><i class="{{ .icon }}"></i></a> <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" {{ printf "onclick=\"gtag('event', 'social_click', {'event_label': '%s_contact_page'});\"" (.name | lower) | safeHTMLAttr }}>{{ .handle }}</a></li>
     {{- end }}
     </ul>
   </div>
