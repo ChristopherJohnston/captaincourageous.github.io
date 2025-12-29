@@ -27,15 +27,14 @@ These are recorded as anonymous, aggregated events. We do not collect personal d
 
 ## Cross-domain
 
-Our merch store is hosted on Square. We use the same Google Analytics property across our website and the Square store to measure overall engagement. You can opt out at any time via your browser settings.
+Our merch store is hosted on Square (an external site). We use the same Google Analytics property across our website and the Square store to measure overall engagement. Because Square handles its own cookie banner, you may be asked to accept or reject analytics again when you visit the store. You can opt out at any time via your browser settings.
 
 ## Managing Consent
 
 - You can accept or reject analytics cookies via the banner.
 - Your choice is stored in your browser (local storage).
 - To change your choice, clear site data in your browser and refresh the page.
-
-<p><a href="#" onclick="window.__openCookieSettings(); return false;">Cookie settings</a></p>
+- Alternatively, click <a href="#" onclick="window.__openCookieSettings(); return false;">Cookie settings</a>, make your selection, and then refresh the page so the change takes effect.
 
 ## Contact
 
