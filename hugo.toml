@@ -26,6 +26,12 @@ unsafe = true
     handle = "@CaptainCourageousBand"
 
   [[params.social]]
+    name = "Threads"
+    url = "https://www.threads.com/@captaincourageousband"
+    icon = "fa-brands fa-threads"
+    handle = "@captaincourageousband"
+
+  [[params.social]]
     name = "Facebook"
     url = "https://www.facebook.com/profile.php?id=61585847815298"
     icon = "fa-brands fa-facebook"
