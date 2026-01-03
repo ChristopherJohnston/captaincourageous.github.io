@@ -47,7 +47,7 @@
 	<p style="margin: 0 0 12px 0; font-weight: 700;">Latest from Instagram</p>
 	<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
 		{{- range site.Data.homepage.instagram_posts }}
-		{{- $shortcode := printf "{{< instagram %s >}}" .id }}
+		{{- $shortcode := printf "{{< instagram %s >}}" . }}
 		{{ $shortcode | $.Page.RenderString }}
 		{{- end }}
 	</div>
