@@ -56,6 +56,12 @@ unsafe = true
     handle = "@CaptainCourageousMusic"
 
   [[params.social]]
+    name = "Soundcloud"
+    url = "https://on.soundcloud.com/CHqLlYzYxXOOJOGVbk"
+    icon = "fa-brands fa-soundcloud"
+    handle = "CaptainCourageous"
+
+  [[params.social]]
     name = "Linktree"
     url = "https://linktr.ee/captaincourageous"
     icon = "fa-solid fa-link"
