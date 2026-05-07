@@ -20,6 +20,12 @@ unsafe = true
   googleAnalyticsID = "G-KFXNZGN4R9"
 
   [[params.social]]
+    name = "Soundcloud"
+    url = "https://on.soundcloud.com/CHqLlYzYxXOOJOGVbk"
+    icon = "fa-brands fa-soundcloud"
+    handle = "CaptainCourageous"
+
+  [[params.social]]
     name = "Instagram"
     url = "https://www.instagram.com/captaincourageousband"
     icon = "fa-brands fa-instagram"
@@ -54,12 +60,6 @@ unsafe = true
     url = "https://www.youtube.com/@CaptainCourageousMusic"
     icon = "fa-brands fa-youtube"
     handle = "@CaptainCourageousMusic"
-
-  [[params.social]]
-    name = "Soundcloud"
-    url = "https://on.soundcloud.com/CHqLlYzYxXOOJOGVbk"
-    icon = "fa-brands fa-soundcloud"
-    handle = "CaptainCourageous"
 
   [[params.social]]
     name = "Linktree"
