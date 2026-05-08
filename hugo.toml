@@ -14,11 +14,14 @@ unsafe = true
   description = "UK guitar-driven band crafting upbeat anthemic tunes with irresistibly catchy hooks"
   keywords = ["Captain Courageous", "band", "music", "rock", "UK"]
   images = ["/images/CaptainCourageous_Profile_2660x1140.jpg"]
-  author = { name = "Captain Courageous", email = "band@captaincourageous.co.uk" }
   press_kit = "/Press_Kit_Captain_Courageous.pdf"
   contact_logo_alt = "Contact Captain Courageous"
   email = "band@captaincourageous.co.uk"
   googleAnalyticsID = "G-KFXNZGN4R9"
+
+  [[params.author]]
+    name = "Captain Courageous"
+    email = "band@captaincourageous.co.uk"
 
   [[params.social]]
     name = "Soundcloud"

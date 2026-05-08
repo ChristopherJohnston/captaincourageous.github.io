@@ -20,6 +20,8 @@ Start here:
 - [Spotify](https://open.spotify.com/track/4t3rPFwSdrpZ5d5FRybwsi)
 - [Apple Music](https://music.apple.com/gb/album/burning-fire-single/1780526334)
 
-Chris and Lewis
-Captain Courageous
+Get in touch: [band@captaincourageous.co.uk](mailto:band@captaincourageous.co.uk)
+
+Chris and Lewis  
+Captain Courageous  
 Older, wiser(ish), no real desire to make it big, but having lots of fun in the process!
