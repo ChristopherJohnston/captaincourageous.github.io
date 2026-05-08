@@ -6,13 +6,13 @@ description: "A small, affectionate indie detour for the Fierce Panda faithful."
 
 Hi Simon and any Pandas who still say "NING!",
 
-Despite being mentioned by "Si" in his book, and ulitmately not used, somehow this domain was still sitting unregistered.
+Despite being mentioned by "Si" in his book, and ultimately not used, somehow this domain was still sitting unregistered.
 
 So we rescued it from the internet abyss and pointed it here, which is either shameless opportunism, sincere indie devotion, or both on alternating Tuesdays.
 
 We're Captain Courageous, a guitar-driven band making upbeat, anthemic tunes with big hooks and a probably unhealthy belief that we're actually indie and that indie guitar music is still worth fighting for.
 
-No funeral yet. Just finished songs, unfinished songs, and songs we will eventually finish. Tie that to stubborn optimism (nowhere near The Wobbles), and all of this results in a few recordings we would love you to enjoy.
+No funeral yet. Just finished songs, unfinished songs, and songs we will eventually finish. Tie that to stubborn optimism (nowhere near The Wobbles), and that leaves a few recordings we would love you to enjoy.
 
 Start here:
 
