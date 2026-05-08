@@ -1,5 +1,5 @@
 ---
-title: "It’s Your Indie Funeral!"
+title: "It’s Your InDIE Funeral!"
 draft: false
 description: "A small, affectionate indie detour for the Fierce Panda faithful."
 ---
@@ -12,7 +12,7 @@ So we rescued it from the internet abyss and pointed it here, which is either sh
 
 We're Captain Courageous, a guitar-driven band making upbeat, anthemic tunes with big hooks and a probably unhealthy belief that we're actually indie and that indie guitar music is still worth fighting for.
 
-No funeral yet. Just a mix of finished and unfinished songs, stubborn optimism, and a few recordings we would love you to hear.
+No funeral yet. Just finished songs, unfinished songs, and songs we will eventually finish. Tie that to stubborn optimism (nowhere near The Wobbles), and all of this results in a few recordings we would love you to enjoy.
 
 Start here:
 
@@ -20,7 +20,7 @@ Start here:
 - [Spotify](https://open.spotify.com/track/4t3rPFwSdrpZ5d5FRybwsi)
 - [Apple Music](https://music.apple.com/gb/album/burning-fire-single/1780526334)
 
-Get in touch: [band@captaincourageous.co.uk](mailto:band@captaincourageous.co.uk)
+Get in touch (especially if you hate us, constructively): [band@captaincourageous.co.uk](mailto:band@captaincourageous.co.uk)
 
 Chris and Lewis  
 Captain Courageous  
